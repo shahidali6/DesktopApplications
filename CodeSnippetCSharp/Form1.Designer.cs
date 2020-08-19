@@ -62,6 +62,7 @@
             this.tbRawData.Location = new System.Drawing.Point(17, 26);
             this.tbRawData.Multiline = true;
             this.tbRawData.Name = "tbRawData";
+            this.tbRawData.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tbRawData.Size = new System.Drawing.Size(350, 347);
             this.tbRawData.TabIndex = 2;
             this.tbRawData.Text = resources.GetString("tbRawData.Text");
@@ -71,16 +72,17 @@
             this.tbResultData.Location = new System.Drawing.Point(386, 26);
             this.tbResultData.Multiline = true;
             this.tbResultData.Name = "tbResultData";
+            this.tbResultData.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tbResultData.Size = new System.Drawing.Size(350, 347);
             this.tbResultData.TabIndex = 3;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(195, 388);
+            this.button2.Location = new System.Drawing.Point(208, 388);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(98, 23);
             this.button2.TabIndex = 5;
-            this.button2.Text = "Clear Text";
+            this.button2.Text = "Clear Text All";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -96,9 +98,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(293, 388);
+            this.button1.Location = new System.Drawing.Point(335, 388);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 23);
+            this.button1.Size = new System.Drawing.Size(192, 23);
             this.button1.TabIndex = 7;
             this.button1.Text = "Extract YouTube URLs from Text";
             this.button1.UseVisualStyleBackColor = true;
@@ -106,9 +108,9 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(461, 388);
+            this.button4.Location = new System.Drawing.Point(554, 388);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(162, 23);
+            this.button4.Size = new System.Drawing.Size(182, 23);
             this.button4.TabIndex = 8;
             this.button4.Text = "Extract YouTube URLs from File";
             this.button4.UseVisualStyleBackColor = true;
