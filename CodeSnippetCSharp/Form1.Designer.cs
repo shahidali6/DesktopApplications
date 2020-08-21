@@ -37,6 +37,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.cbRawDataOptions = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -116,11 +117,24 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // cbRawDataOptions
+            // 
+            this.cbRawDataOptions.FormattingEnabled = true;
+            this.cbRawDataOptions.Items.AddRange(new object[] {
+            "Remove HTML Tags",
+            "YouTube Raw Data"});
+            this.cbRawDataOptions.Location = new System.Drawing.Point(132, 2);
+            this.cbRawDataOptions.Name = "cbRawDataOptions";
+            this.cbRawDataOptions.Size = new System.Drawing.Size(235, 21);
+            this.cbRawDataOptions.TabIndex = 9;
+            this.cbRawDataOptions.SelectedIndexChanged += new System.EventHandler(this.cbRawDataOptions_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 428);
+            this.Controls.Add(this.cbRawDataOptions);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
@@ -146,6 +160,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox cbRawDataOptions;
     }
 }
 

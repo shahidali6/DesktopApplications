@@ -50,5 +50,17 @@ namespace CodeSnippetCSharp
             tbResultData.Text = string.Join(Environment.NewLine, HTMLCodeSnippet.ExtractYouTubeVideoURLs(fileContent));
             tbRawData.Text = "Extract URL using file";
         }
+
+        private void cbRawDataOptions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbRawDataOptions.SelectedIndex > -1)
+            {
+                if (cbRawDataOptions.SelectedIndex == 0)
+                {
+                    //cbRawDataOptions.SelectedIndex = HTMLCodeSnippet.
+                }
+
+            }
+        }
     }
 }
