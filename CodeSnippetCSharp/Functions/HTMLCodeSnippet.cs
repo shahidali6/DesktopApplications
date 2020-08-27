@@ -117,5 +117,23 @@ namespace CodeSnippetCSharp
             }
             return fileContent;
         }
+
+        public static List<string> MergeTwoPlayLists(string firstFile, string secondFile)
+        {
+            //Read the contents of the file into a stream
+            var firstFileRaw = String.Empty;
+            var secondFileRaw = String.Empty;
+            List<string> secondFileList = new List<string>();
+
+            using (StreamReader reader = new StreamReader(firstFile))
+            {
+                firstFileRaw = reader.ReadToEnd();
+            }
+            //using (StreamReader reader = new StreamReader(secondFile))
+            //{
+            //    secondFileList = reader.ReadToEnd().Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
+            //}
+            return secondFileList;
+        }
     }
 }
