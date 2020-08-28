@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CodeSnippetCSharp;
 
 namespace CodeSnippetCSharp
 {
@@ -71,6 +72,20 @@ namespace CodeSnippetCSharp
         private void button6_Click(object sender, EventArgs e)
         {
             tbResultData.Text = HTMLCodeSnippet.ReadTextFileUsingDialougeBox();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //var returnList = HTMLCodeSnippet.MergeTwoPlayLists(HTMLCodeSnippet.GetFileNameandPathUsingDialougeBox(), HTMLCodeSnippet.GetFileNameandPathUsingDialougeBox());
+            var returnList = HTMLCodeSnippet.MergeTwoPlayLists(@"C: \Users\Shahid\source\repos\shahidali6\CodeSnippetCSharp\CodeSnippetCSharp\bin\Debug\60S - Selected - Soft.m3u8", @"C: \Users\Shahid\source\repos\shahidali6\CodeSnippetCSharp\CodeSnippetCSharp\bin\Debug\60S - Selected - Soft 2.m3u8");
+
+            
+
+            foreach (var item in returnList)
+            {
+                tbResultData.Text += item.ToString();
+                tbResultData.Text += Environment.NewLine;
+            }
         }
     }
 }

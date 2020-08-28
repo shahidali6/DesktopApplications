@@ -118,22 +118,61 @@ namespace CodeSnippetCSharp
             return fileContent;
         }
 
+        public static string GetFileNameandPathUsingDialougeBox()
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            openFileDialog.Filter = "txt files (*.txt)|*.txt|html files (*.html)|*.html|All files (*.*)|*.*";
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.RestoreDirectory = true;
+
+            //openFileDialog.ShowDialog();
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                //string fileName;
+                filePath = openFileDialog.FileName;
+            }
+            else
+            {
+                MessageBox.Show("No File Selected", "Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+            return filePath;
+        }
         public static List<string> MergeTwoPlayLists(string firstFile, string secondFile)
         {
             //Read the contents of the file into a stream
-            var firstFileRaw = String.Empty;
-            var secondFileRaw = String.Empty;
-            List<string> secondFileList = new List<string>();
+            //var firstFileRaw = String.Empty;
+            //string[] firstFileRawArray = String.Empty;
+            //var secondFileRaw = String.Empty;
+            //List<string> secondFileList = new List<string>();
+            //List<string> tempList = new List<string>();
+            //List<char> tempListChar = new List<string>();
 
-            using (StreamReader reader = new StreamReader(firstFile))
-            {
-                firstFileRaw = reader.ReadToEnd();
-            }
+            List<string> firstFileList = new List<string>();
+            List<string> SecondFileList = new List<string>();
+
+            firstFileList = File.ReadAllLines(firstFile).ToList();
+            SecondFileList = File.ReadAllLines(secondFile).ToList();
+            SecondFileList.Remove("#EXTM3U");
+
+            //firstFileList.Add(SecondFileList);
+            firstFileList.AddRange(SecondFileList);
+
+            //using (StreamReader reader = new StreamReader(firstFile))
+            //{
+            //    tempListChar = reader.ReadToEnd().ToList();
+            //    tempList = tempListChar.ToList();
+            //}
             //using (StreamReader reader = new StreamReader(secondFile))
             //{
-            //    secondFileList = reader.ReadToEnd().Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries).ToList();
+            //    secondFileRaw = reader.ReadToEnd();
             //}
-            return secondFileList;
+
+            //secondFileList.Add(secondFileRaw);
+            return firstFileList;
         }
     }
 }
