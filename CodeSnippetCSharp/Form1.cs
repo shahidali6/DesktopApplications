@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CodeSnippetCSharp;
+using CodeSnippetCSharp.Functions;
 
 namespace CodeSnippetCSharp
 {
@@ -85,6 +86,19 @@ namespace CodeSnippetCSharp
             {
                 tbResultData.Text += item.ToString();
                 tbResultData.Text += Environment.NewLine;
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            //tbResultData.Text = MSWord.ModifyMSWordDoc(@"F:\Dropbox\Project\DOCX", "*.docx");
+            var returnList = DirectoryFileIOOperations.GetFileNamesinList(@"F:\Dropbox\Project\DOCX - Copy", "*.docx");
+
+            foreach (var item in returnList)
+            {
+                tbResultData.Text += item.ToString();
+                tbResultData.Text += Environment.NewLine;
+                MSWord.ModifyMSWordDoc(item);
             }
         }
     }

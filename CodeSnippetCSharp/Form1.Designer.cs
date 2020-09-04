@@ -40,9 +40,10 @@
             this.cbRawDataOptions = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -150,6 +151,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button8);
             this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.button5);
@@ -160,15 +162,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Desktop";
             // 
-            // button5
+            // button7
             // 
-            this.button5.Location = new System.Drawing.Point(7, 19);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(104, 23);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Read Left Text File";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button7.Location = new System.Drawing.Point(123, 69);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(104, 23);
+            this.button7.TabIndex = 2;
+            this.button7.Text = "Merge Two Playlists";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -180,15 +182,25 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
+            // button5
             // 
-            this.button7.Location = new System.Drawing.Point(123, 69);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(104, 23);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "Merge Two Playlists";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button5.Location = new System.Drawing.Point(7, 19);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(104, 23);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "Read Left Text File";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(240, 69);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 3;
+            this.button8.Text = "button8";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Form1
             // 
@@ -228,6 +240,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }
 
