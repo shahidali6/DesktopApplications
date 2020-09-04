@@ -1,6 +1,7 @@
 ﻿using Microsoft.Office.Interop.Word;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace CodeSnippetCSharp.Functions
             string endSentence = " would go a long way to accomplish this.";
             string path = pathNfileName;
             Application word = new Application();
+            //word.DisplayAlerts = false;
             Document doc = new Document();
 
             object fileName = path;
@@ -67,5 +69,19 @@ namespace CodeSnippetCSharp.Functions
             ((_Document)doc).Close();
             ((_Application)word).Quit();
         }       
+        public static void PrintWordDocument(string pathNFileName)
+        {
+            using (System.Windows.Forms.PrintDialog pd = new System.Windows.Forms.PrintDialog())
+            {
+                //pd.ShowDialog();
+                ProcessStartInfo info = new ProcessStartInfo(pathNFileName);
+                info.Verb = "PrintTo";
+                info.Arguments = pd.PrinterSettings.PrinterName;
+                info.CreateNoWindow = true;
+                info.WindowStyle = ProcessWindowStyle.Hidden;
+                info.ErrorDialog = false;
+                Process.Start(info);
+            }
+        }
     }
 }

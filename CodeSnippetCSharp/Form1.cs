@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CodeSnippetCSharp;
@@ -99,6 +100,22 @@ namespace CodeSnippetCSharp
                 tbResultData.Text += item.ToString();
                 tbResultData.Text += Environment.NewLine;
                 MSWord.ModifyMSWordDoc(item);
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            var returnList = DirectoryFileIOOperations.GetFileNamesinList(@"F:\Dropbox\Project\DOCX - Copy", "*.docx");
+
+            foreach (var item in returnList)
+            {
+                int counter = 1;
+                tbResultData.Text += "["+ counter + "] " + item.ToString();
+                tbResultData.Text += Environment.NewLine;
+                //MSWord.ModifyMSWordDoc(item);
+                MSWord.PrintWordDocument(item);
+                Thread.Sleep(5000);
+                counter++;
             }
         }
     }

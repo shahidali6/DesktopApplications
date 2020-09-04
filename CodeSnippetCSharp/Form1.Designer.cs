@@ -40,10 +40,11 @@
             this.cbRawDataOptions = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -151,6 +152,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button9);
             this.groupBox2.Controls.Add(this.button8);
             this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.button6);
@@ -162,11 +164,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Desktop";
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(7, 48);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(104, 23);
+            this.button8.TabIndex = 3;
+            this.button8.Text = "Modify Word Doc";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(123, 69);
+            this.button7.Location = new System.Drawing.Point(117, 19);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(104, 23);
+            this.button7.Size = new System.Drawing.Size(117, 23);
             this.button7.TabIndex = 2;
             this.button7.Text = "Merge Two Playlists";
             this.button7.UseVisualStyleBackColor = true;
@@ -192,15 +204,15 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button8
+            // button9
             // 
-            this.button8.Location = new System.Drawing.Point(240, 69);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 3;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button9.Location = new System.Drawing.Point(118, 48);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(116, 23);
+            this.button9.TabIndex = 4;
+            this.button9.Text = "Print Word Doc";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // Form1
             // 
@@ -241,6 +253,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
     }
 }
 
