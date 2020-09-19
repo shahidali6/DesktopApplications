@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ScrapWebSites
+namespace CodeSnippetCSharp
 {
     class Program
     {
@@ -21,6 +21,7 @@ namespace ScrapWebSites
             var url = "http://unity3d-assetstore.blogspot.com/2018/05/unity3d-assets-collection.html";
             var httpClient = new HttpClient();
             var html = httpClient.GetStringAsync(url);
+            //var html = httpClient.GetStringAsync(url);
 
             Console.WriteLine(html.Result);
         }

@@ -33,7 +33,7 @@ namespace CodeSnippetCSharp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            tbResultData.Text = HTMLCodeSnippet.RemoveHTMLTagsFromStringNewLine(tbRawData.Text);
+            tbResultData.Text = HTMLCodeSnippet.RemoveHTMLTagsFromStringAndNewLine(tbRawData.Text);
         }
 
         private void button1_Click_1(object sender, EventArgs e)

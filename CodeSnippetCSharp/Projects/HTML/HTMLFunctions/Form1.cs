@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using CodeSnippetCSharp;
 using CodeSnippetCSharp.Functions;
 
-namespace CodeSnippetCSharp
+namespace CodeSnippetCSharp.Functions
 {
     public partial class Form1 : Form
     {
@@ -117,6 +117,16 @@ namespace CodeSnippetCSharp
                 Thread.Sleep(5000);
                 counter++;
             }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            string fileContent = string.Empty;
+            fileContent = 
+            fileContent = HTMLCodeSnippet.ReadTextFileUsingDialougeBox();
+            fileContent = htm
+            tbResultData.Text = string.Join(Environment.NewLine, HTMLCodeSnippet.ExtractYouTubeVideoURLs(fileContent));
+            tbRawData.Text = "Extract URL using file";
         }
     }
 }

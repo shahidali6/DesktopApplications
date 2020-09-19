@@ -1,4 +1,4 @@
-﻿namespace Selenium
+﻿namespace CodeSnippetCSharp
 {
     partial class Form1
     {
