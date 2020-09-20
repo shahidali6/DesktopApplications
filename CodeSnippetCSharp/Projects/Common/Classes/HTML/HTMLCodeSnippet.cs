@@ -44,7 +44,7 @@ namespace CodeSnippetCSharp
             input = ReplaceSpecialCharacters(input);
             return input;
         }
-        public static string RemoveHTMLTagsFromStringNewLine(string input)
+        public static string RemoveHTMLTagsFromStringAndNewLine(string input)
         {
             input = Regex.Replace(input, "<.*?>", Environment.NewLine);
             input = Regex.Replace(input, @"^\s*$[\r\n]*", string.Empty, RegexOptions.Multiline);

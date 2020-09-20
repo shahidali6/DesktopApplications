@@ -70,9 +70,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\DirectoryFileIOOperations.cs" />
-    <Compile Include="Classes\HTMLCodeSnippet.cs" />
-    <Compile Include="Classes\MSWord.cs" />
+    <Compile Include="Classes\Common\DirectoryFileIOOperations.cs" />
+    <Compile Include="Classes\HTML\HTMLCodeSnippet.cs" />
+    <Compile Include="Classes\MSOffice\MSWord.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
