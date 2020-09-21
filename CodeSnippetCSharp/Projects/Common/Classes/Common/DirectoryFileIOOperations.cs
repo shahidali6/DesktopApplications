@@ -46,6 +46,17 @@ namespace CodeSnippetCSharp
             return fileContent;
         }
 
+        public static string ReadTextFileDirect(string fileNameandPath)
+        {
+            var fileContent = string.Empty;
+
+            using (StreamReader reader = new StreamReader(fileNameandPath))
+            {
+                fileContent = reader.ReadToEnd();
+            }
+            return fileContent;
+        }
+
         public static string GetFileNameandPathUsingDialougeBox()
         {
             var fileContent = string.Empty;
