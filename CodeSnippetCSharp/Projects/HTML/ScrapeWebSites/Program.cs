@@ -15,10 +15,39 @@ namespace CodeSnippetCSharp
     {
         static void Main(string[] args)
         {
-            List<string> listofCSV = new List<string>();
+            List<string> mainDataList = new List<string>();
+            List<string> getReponseList = new List<string>();
+            List<CSVData> CSVStructDataList = new List<CSVData>();
+
             //var test1 = ReadTextFileDirect(@"C:\Users\Shahid\Downloads\temp.html");
             //listofCSV = ReadTextFileDirect(@"C:\Users\Shahid\Downloads\temp.html").Split('@').ToList();
-            listofCSV = ReadTextFileDirect(@"C:\Users\Shahid\Downloads\unityPackageNameAndLink.txt").Split('@').ToList();
+            mainDataList = ReadTextFileDirect(@"C:\Users\Shahid\Downloads\unityPackageNameAndLinkShort.txt").Split('@').ToList();
+            char delimiter = ',';
+            int i = 0;
+            string temp = string.Empty;
+            foreach (var item in mainDataList)
+            {
+                var tempData = new CSVData();
+
+                if (i % 2 == 0)
+                {
+                    temp = item;
+                }
+                if (i % 2 == 1)
+                {
+                    string temp1 = item;
+                    tempData.packageName = temp;
+                    tempData.packageDownloadLink = item;
+                    tempData.packageResponseData = HtmlStringAsync(item);
+                    ///*.Replace("<META HTTP-EQUIV=REFRESH CONTENT=\"1; \";", string.Empty).Replace("\" >", string.Empty).Trim()*/;
+
+                    CSVStructDataList.Add(tempData);
+                }
+                i++;
+
+            }
+
+            var result = WriteTextFile(@"d:\Link.txt", CSVStructDataList);
 
 
 
@@ -28,6 +57,13 @@ namespace CodeSnippetCSharp
 
 
             Console.ReadLine();
+        }
+
+        public struct CSVData
+        {
+            public string packageName { get; set; }
+            public string packageDownloadLink { get; set; }
+            public string packageResponseData { get; set; }
         }
 
         private static void ExtractTablefromHTML()
@@ -91,9 +127,11 @@ namespace CodeSnippetCSharp
             //var url = "http://unitylover.com/download/38896424";
             //var url = "http://unity3d-assetstore.blogspot.com/2018/05/unity3d-assets-collection.html";
             var httpClient = new HttpClient();
+            httpClient.CancelPendingRequests();
             var html = httpClient.GetStringAsync(url);
             //var html = httpClient.GetStringAsync(url);
-
+            //httpClient.CancelPendingRequests();
+            //httpClient.Timeout = 1000.0f;
             Console.WriteLine(html.Result);
             return html.Result;
         }
@@ -118,6 +156,33 @@ namespace CodeSnippetCSharp
             }
             tempList = fileContent.Split('@').ToList();
             return fileContent;
+        }
+        public static bool WriteTextFile(string pathAndName, List<CSVData> CSVDataList)
+        {
+            char delimiter = ',';
+            //string path = @"D:\Text_Files\my_file.txt";
+
+            // The line below will create a text file, my_file.txt, in 
+            // the Text_Files folder in D:\ drive.
+            // The CreateText method that returns a StreamWriter object
+            using (StreamWriter sw = File.CreateText(pathAndName))
+            {
+                foreach (var item in CSVDataList)
+                    {
+                    sw.WriteLine(item.packageName + delimiter + item.packageDownloadLink+delimiter+item.packageResponseData);                
+                    }
+                sw.Close();
+                sw.Dispose();
+            }           
+
+            if (File.Exists(pathAndName))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
