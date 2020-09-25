@@ -15,13 +15,15 @@ namespace CodeSnippetCSharp
     {
         static void Main(string[] args)
         {
+            string sourceFileName = @"C:\Users\msaddique\Downloads\unityPackageNameAndLink.txt";
+            string newFileName = @"d:\Link.txt";
             List<string> mainDataList = new List<string>();
             List<string> getReponseList = new List<string>();
             List<CSVData> CSVStructDataList = new List<CSVData>();
 
             //var test1 = ReadTextFileDirect(@"C:\Users\Shahid\Downloads\temp.html");
             //listofCSV = ReadTextFileDirect(@"C:\Users\Shahid\Downloads\temp.html").Split('@').ToList();
-            mainDataList = ReadTextFileDirect(@"C:\Users\Shahid\Downloads\unityPackageNameAndLinkShort.txt").Split('@').ToList();
+            mainDataList = ReadTextFileDirect(sourceFileName).Split('@').ToList();
             char delimiter = ',';
             int i = 0;
             string temp = string.Empty;
@@ -38,8 +40,7 @@ namespace CodeSnippetCSharp
                     string temp1 = item;
                     tempData.packageName = temp;
                     tempData.packageDownloadLink = item;
-                    tempData.packageResponseData = HtmlStringAsync(item);
-                    ///*.Replace("<META HTTP-EQUIV=REFRESH CONTENT=\"1; \";", string.Empty).Replace("\" >", string.Empty).Trim()*/;
+                    tempData.packageResponseData = HtmlStringAsync(item).Replace("<META HTTP-EQUIV=REFRESH CONTENT=", string.Empty).Replace("\"1;", string.Empty).Replace("\">", string.Empty).Trim();
 
                     CSVStructDataList.Add(tempData);
                 }
@@ -47,7 +48,7 @@ namespace CodeSnippetCSharp
 
             }
 
-            var result = WriteTextFile(@"d:\Link.txt", CSVStructDataList);
+            var result = WriteTextFile(newFileName, CSVStructDataList);
 
 
 
