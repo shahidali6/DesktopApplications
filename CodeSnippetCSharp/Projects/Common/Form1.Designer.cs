@@ -40,11 +40,12 @@
             this.cbRawDataOptions = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -152,6 +153,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button10);
             this.groupBox2.Controls.Add(this.button9);
             this.groupBox2.Controls.Add(this.button8);
             this.groupBox2.Controls.Add(this.button7);
@@ -163,6 +165,16 @@
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Desktop";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(118, 48);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(116, 23);
+            this.button9.TabIndex = 4;
+            this.button9.Text = "Print Word Doc";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -204,15 +216,15 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button9
+            // button10
             // 
-            this.button9.Location = new System.Drawing.Point(118, 48);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(116, 23);
-            this.button9.TabIndex = 4;
-            this.button9.Text = "Print Word Doc";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button10.Location = new System.Drawing.Point(7, 77);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(227, 23);
+            this.button10.TabIndex = 5;
+            this.button10.Text = "Modify Word Doc Tables";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // Form1
             // 
@@ -254,6 +266,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
     }
 }
 

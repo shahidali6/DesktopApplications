@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -68,7 +69,109 @@ namespace CodeSnippetCSharp
             ((_Document)doc).Save();
             ((_Document)doc).Close();
             ((_Application)word).Quit();
-        }       
+        }
+        public static string ModifyMSWordDocTables(string pathNfileName)
+        {
+            string mainString = string.Empty;
+            Application wordApp = new Application();
+            //word.DisplayAlerts = false;
+            Document doc = new Document();
+
+            object fileName = pathNfileName;
+            // Define an object to pass to the API for missing parameters
+            object missing = System.Type.Missing;
+            doc = wordApp.Documents.Open(ref fileName,
+                    ref missing, ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing, ref missing,
+                    ref missing, ref missing, ref missing);
+
+            List<Range> allTablesList = new List<Range>();
+            int loopCounter = 0;
+
+            for (int i = 0; i < doc.Tables.Count; i++)
+            {
+                Range tableRange = doc.Tables[i].Range;
+                allTablesList.Add(tableRange);
+            }
+
+            var listTables = doc.Tables;
+
+            //allTablesList.Add(listTables);
+
+            //allTablesList.Add(doc.Tables);
+
+            foreach (var table in listTables)
+            {
+                //Range row = table. .Range;
+                //Cells cells = row.Cells;
+            }
+
+            for (int i = 0; i < doc.Tables.Count; i++)
+            {
+                //allTablesList.Add(doc.Tables[i]);
+            }
+
+            foreach (var item in doc.Tables)
+            {
+                //allTablesList.Add(doc.Tables[loopCounter]);
+                loopCounter++;
+            }
+
+            foreach (var item in allTablesList)
+            {
+                loopCounter = 0;
+                //Range row = item.Range;
+                //Cells cells = row.Cells;
+                //foreach (var item1 in cells)
+                //{
+                //    Cell cell = cells[loopCounter];
+                //    Range row2 = cell.Range;
+                //    mainString += row2.Text + Environment.NewLine;
+                   
+                //    Marshal.ReleaseComObject(cell);
+                //    Marshal.ReleaseComObject(row2);
+                //    loopCounter++;
+                //}
+                //Marshal.ReleaseComObject(row);
+                //Marshal.ReleaseComObject(cells);
+            }
+
+            //Table t = doc.Tables[1];
+            //Range r = t.Range;
+            //Cells cells = r.Cells;
+            //for (int i = 1; i <= cells.Count; i++)
+            //{
+            //    Cell cell = cells[i];
+            //    Range r2 = cell.Range;
+            //    mainString =+ r2.Text + Environment.NewLine;
+            //    Marshal.ReleaseComObject(cell);
+            //    Marshal.ReleaseComObject(r2);
+            //}
+
+            //Rows rows = t.Rows;
+            //Columns cols = t.Columns;
+            // Cannot access individual rows in this collection because the table has vertically merged cells.
+            //for (int i = 0; i < rows.Count; i++) {
+            //  for (int j = 0; j < cols.Count; j++) {
+            //      Cell cell = rows[i].Cells[j];
+            //      Range r = cell.Range;
+            //  }
+            //}
+            doc.Close(false);
+            wordApp.Quit(false);
+                //doc.Close(false);
+                //app.Quit(false);
+                //Marshal.ReleaseComObject(cols);
+                //Marshal.ReleaseComObject(rows);
+                Marshal.ReleaseComObject(doc);
+                Marshal.ReleaseComObject(wordApp);
+
+            //((_Document)doc).Save();
+            //            ((_Document)doc).Close();
+            //            ((_Application)word).Quit();
+            return mainString;
+        }
         public static void PrintWordDocument(string pathNFileName)
         {
             using (System.Windows.Forms.PrintDialog pd = new System.Windows.Forms.PrintDialog())

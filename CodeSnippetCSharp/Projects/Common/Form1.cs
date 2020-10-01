@@ -117,5 +117,10 @@ namespace CodeSnippetCSharp
                 counter++;
             }
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+           tbResultData.Text =  MSWord.ModifyMSWordDocTables(@"C:\Users\Shahid\Desktop\temp\filter\Bypass Filter Simulation - Storyboard for Interactive Presentations Ver 1.0a1.doc");
+        }
     }
 }

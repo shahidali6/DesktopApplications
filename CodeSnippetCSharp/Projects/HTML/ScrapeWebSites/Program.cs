@@ -54,9 +54,39 @@ namespace CodeSnippetCSharp
             //HtmlStringAsync();
 
             //ExtractTablefromHTML();
+            ExtractHTMLNodes(@"C:\Users\Shahid\Downloads\Online Courses for Freelancers & Solopreneurs - Learn from Fiverr.html") ;
+
 
 
             Console.ReadLine();
+        }
+
+        private static void ExtractHTMLNodes(string htmlFilewithPath)
+        {
+            HtmlDocument doc = new HtmlDocument();
+            doc.Load(htmlFilewithPath);
+
+            //HtmlNode htmlNodes = doc.DocumentNode.SelectNodes("table").Single();
+            HtmlNodeCollection htmlNodes1 = doc.DocumentNode.ChildNodes;
+            HtmlNodeCollection htmlNodes2 = .DocumentNode.ChildNodes;
+
+            //HtmlElementCollection tables = this.WB.Document.GetElementsByTagName("table");
+
+            //foreach (HtmlElement TBL in tables)
+            //{
+            //    foreach (HtmlElement ROW in TBL.All)
+            //    {
+
+            //        foreach (HtmlElement CELL in ROW.All)
+            //        {
+
+            //            // Now you are looping through all cells in each table
+
+            //            // Here you could use CELL.InnerText to search for "Status" or "Approved"
+            //        }
+            //    }
+            //}
+            throw new NotImplementedException();
         }
 
         public struct CSVData
