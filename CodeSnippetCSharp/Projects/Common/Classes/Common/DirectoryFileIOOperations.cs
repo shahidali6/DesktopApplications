@@ -80,5 +80,39 @@ namespace CodeSnippetCSharp
             }
             return filePath;
         }
+        public static bool WriteTextFileOncefromString(string pathandExtenstion, string dataToWrite)
+        {
+            bool fileSTatus = false;
+            try
+            {
+                //If the target file already exists, it is overwritten.
+                System.IO.File.WriteAllText(pathandExtenstion, dataToWrite);
+                fileSTatus = true;
+            }
+            catch (Exception ex)
+            {
+                fileSTatus = false;
+
+                MessageBox.Show("Message: " + ex, "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return fileSTatus;
+        }
+        public static bool WriteTextFileOncefromArray(string pathandExtenstion, string[] dataToWrite)
+        {
+            bool fileSTatus = false;
+            try
+            {
+                //If the target file already exists, it is overwritten.
+                System.IO.File.WriteAllLines(pathandExtenstion, dataToWrite);
+                fileSTatus = true;
+            }
+            catch (Exception ex)
+            {
+                fileSTatus = false;
+
+                MessageBox.Show("Message: " + ex, "Exception Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return fileSTatus;
+        }
     }
 }
