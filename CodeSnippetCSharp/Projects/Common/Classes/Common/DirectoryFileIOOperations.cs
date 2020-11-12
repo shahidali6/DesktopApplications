@@ -80,13 +80,19 @@ namespace CodeSnippetCSharp
             }
             return filePath;
         }
-        public static bool WriteTextFileOncefromString(string pathandExtenstion, string dataToWrite)
+        public static bool WriteTextFileOncefromString(string path, string fileandExtenstion, string dataToWrite)
         {
             bool fileSTatus = false;
             try
             {
+                bool exists = System.IO.Directory.Exists(path);
+
+                if (!exists)
+                    System.IO.Directory.CreateDirectory(path);
+
+
                 //If the target file already exists, it is overwritten.
-                System.IO.File.WriteAllText(pathandExtenstion, dataToWrite);
+                System.IO.File.WriteAllText(path+ fileandExtenstion, dataToWrite);
                 fileSTatus = true;
             }
             catch (Exception ex)
